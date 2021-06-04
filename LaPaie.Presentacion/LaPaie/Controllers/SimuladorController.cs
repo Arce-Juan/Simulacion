@@ -24,6 +24,8 @@ namespace LaPaie.Controllers
         [HttpPost]
         public ActionResult Index(FormCollection collection)
         {
+            var aux = collection["nCostoFijoGas"];
+
             var diasSumilacion = int.Parse(collection["nDiasSumilacion"]);
             var costoFijoGas = double.Parse(collection["nCostoFijoGas"]);
             var costoMetro3Gas = double.Parse(collection["nCostoMetro3Gas"]);
@@ -110,7 +112,7 @@ namespace LaPaie.Controllers
                 BolsaCafeGranosTorrado = bolsasCafeGranosTorrado.ToString(),
                 CostoTotalGas = costoTotalGas.ToString(),
                 CafeSinEnvasar = cafeSinEnvasar.ToString(),
-                Mensaje = cafeSinEnvasar > 10000 ? "Envolsar en menos cantidad" : "Seguir envolsando igual"
+                Mensaje = cafeSinEnvasar > 10000 ? "Embolsar en menos cantidad" : "Seguir embolsando igual"
             };
 
             return View(model);
