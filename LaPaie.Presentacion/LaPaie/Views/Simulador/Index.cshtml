@@ -8,63 +8,113 @@
     <div class="col-12">
         <h3>Resultado de Simulador</h3>
     </div>
+    
+    <div class="col-12" id="idColImagen" style="display: block">
+        <img src="~/Resource/images/tenor.gif" width="100" height="100" border="0">
+    </div>
 
-    <div class="col-12">
-        <div class="form-group">
-            <label for="formGroupExampleInput">Total Cafe Tostado</label>
-            <input type="text" class="form-control" id="" placeholder="" value="@Model.TotalCafeTostado">
-        </div>
-        <div class="form-group">
-            <label for="formGroupExampleInput">BolsaCafeMolido Crema</label>
-            <input type="text" class="form-control" id="" placeholder="" value="@Model.BolsaCafeMolidoCrema">
-        </div>
-        <div class="form-group">
-            <label for="formGroupExampleInput">BolsaCafeMolidoTorrado</label>
-            <input type="text" class="form-control" id="" placeholder="" value="@Model.BolsaCafeMolidoTorrado">
-        </div>
-        <div class="form-group">
-            <label for="formGroupExampleInput">BolsaCafeGranosCrema</label>
-            <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.BolsaCafeGranosCrema">
-        </div>
-        <div class="form-group">
-            <label for="formGroupExampleInput">BolsaCafeGranosTorrado</label>
-            <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.BolsaCafeGranosTorrado">
+    <div class="col-12" id="idColContenedor" style="display: none">
+
+
+        <div class="row mb-2">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Total Cafe Tostado</label>
+                    <input type="text" class="form-control col-4" id="" placeholder="" value="@Model.TotalCafeTostado">
+                </div>
+            </div>
         </div>
 
-        <div class="form-group">
-            <label for="formGroupExampleInput">CostoTotalGas</label>
-            <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.CostoTotalGas">
+        <div class="row mb-2">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Costo Total Gas Consumido</label>
+                    <input type="text" class="form-control col-4" id="formGroupExampleInput" placeholder="Maximo" value="@Model.CostoTotalGas">
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Bolsa Cafe Molido Crema</label>
+                    <input type="text" class="form-control col-6" id="" placeholder="" value="@Model.BolsaCafeMolidoCrema">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Bolsa Cafe Molido Torrado</label>
+                    <input type="text" class="form-control col-6" id="" placeholder="" value="@Model.BolsaCafeMolidoTorrado">
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Bolsa Cafe Granos Crema</label>
+                    <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.BolsaCafeGranosCrema">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Bolsa Cafe Granos Torrado</label>
+                    <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.BolsaCafeGranosTorrado">
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Cafe Granos Torrado Sin Envolsar</label>
+                    <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.CafeGranosTorradoSinEnvolsar">
+                </div>
+
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Cafe Granos Crema Sin Envolsar</label>
+                    <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.CafeGranosCremaSinEnvolsar">
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Cafe Molido Torrado Sin Envolsar</label>
+                    <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.CafeMolidoTorradoSinEnvolsar">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Cafe Molido Crema Sin Envolsar</label>
+                    <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.CafeMolidoCremaSinEnvolsar">
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Cafe Sin Envasar</label>
+                    <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.CafeSinEnvasar">
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Recomendación: </label>
+                    <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.Mensaje">
+                </div>
+            </div>
         </div>
 
         <div class="form-group">
-            <label for="formGroupExampleInput">CafeSinEnvasar</label>
-            <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.CafeSinEnvasar">
-        </div>
-
-        <div class="form-group">
-            <label for="formGroupExampleInput">CafeGranosTorradoSinEnvolsar</label>
-            <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.CafeGranosTorradoSinEnvolsar">
-        </div>
-        <div class="form-group">
-            <label for="formGroupExampleInput">CafeGranosCremaSinEnvolsar</label>
-            <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.CafeGranosCremaSinEnvolsar">
-        </div>
-        <div class="form-group">
-            <label for="formGroupExampleInput">CafeMolidoTorradoSinEnvolsar</label>
-            <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.CafeMolidoTorradoSinEnvolsar">
-        </div>
-        <div class="form-group">
-            <label for="formGroupExampleInput">CafeMolidoCremaSinEnvolsar</label>
-            <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.CafeMolidoCremaSinEnvolsar">
-        </div>
-
-        <div class="form-group">
-            <label for="formGroupExampleInput">Mensaje</label>
-            <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.Mensaje">
-        </div>
-
-        <div class="form-group">
-            <a class="btn btn-primary" href="/Simulador/IngresarParametros" role="button">Atrás</a>
+            <a class="btn btn-secondary" href="/Simulador/IngresarParametros" role="button">Atrás</a>
         </div>
 
     </div>
@@ -124,11 +174,21 @@
 
     console.log("Total sum is " + total);
 
-    
-
     var LanzarModalError = function (mensaje) {
         $("#idPError").html("<b>" + mensaje + "</b>");
         $("#modal-error").modal("show");
         return false;
     };
+
+    $(document).ready(function () {
+        console.log("cargando el simulador");
+
+        setTimeout(function () {
+            $('#idColContenedor').show();
+            $('#idColImagen').hide();
+        }, 3000);
+
+        
+
+    });
 </script>

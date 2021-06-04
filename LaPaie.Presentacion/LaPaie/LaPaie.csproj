@@ -139,6 +139,7 @@
     <Content Include="Resource\css\estilos.css" />
     <Content Include="Resource\css\sb-admin-2.css" />
     <Content Include="Resource\css\sb-admin-2.min.css" />
+    <Content Include="Resource\images\tenor.gif" />
     <Content Include="Resource\js\demo\chart-area-demo.js" />
     <Content Include="Resource\js\demo\chart-bar-demo.js" />
     <Content Include="Resource\js\demo\chart-pie-demo.js" />

@@ -101,19 +101,22 @@ namespace LaPaie.Controllers
             var cafeSinEnvasar = cafeGranosTorradoSinEnvolsar + cafeGranosCremaSinEnvolsar + cafeMolidoTorradoSinEnvolsar + cafeMolidoCremaSinEnvolsar;
             var costoTotalGas = costoFijoGas + (totalMinutosEncendidoHorno * costoMetro3Gas);
 
+            var dato = totalCafeTostado;
+            var datoc = Math.Round(totalCafeTostado);
+
             var model = new SimuladorViewModel()
             {
-                TotalCafeTostado = totalCafeTostado.ToString(),
+                TotalCafeTostado = Math.Round(totalCafeTostado, 2).ToString(),
                 BolsaCafeMolidoCrema = bolsasCafeMolidoCrema.ToString(),
                 BolsaCafeMolidoTorrado = bolsasCafeMolidoTorrado.ToString(),
                 BolsaCafeGranosCrema = bolsasCafeGranosCrema.ToString(),
                 BolsaCafeGranosTorrado = bolsasCafeGranosTorrado.ToString(),
-                CostoTotalGas = costoTotalGas.ToString(),
-                CafeSinEnvasar = cafeSinEnvasar.ToString(),
-                CafeGranosTorradoSinEnvolsar = cafeGranosTorradoSinEnvolsar.ToString(),
-                CafeGranosCremaSinEnvolsar = cafeGranosCremaSinEnvolsar.ToString(),
-                CafeMolidoTorradoSinEnvolsar = cafeMolidoTorradoSinEnvolsar.ToString(),
-                CafeMolidoCremaSinEnvolsar = cafeMolidoCremaSinEnvolsar.ToString(),
+                CostoTotalGas = Math.Round(costoTotalGas, 2).ToString(),
+                CafeSinEnvasar = Math.Round(cafeSinEnvasar, 2).ToString(),
+                CafeGranosTorradoSinEnvolsar = Math.Round(cafeGranosTorradoSinEnvolsar, 2).ToString(),
+                CafeGranosCremaSinEnvolsar = Math.Round(cafeGranosCremaSinEnvolsar, 2).ToString(),
+                CafeMolidoTorradoSinEnvolsar = Math.Round(cafeMolidoTorradoSinEnvolsar, 2).ToString(),
+                CafeMolidoCremaSinEnvolsar = Math.Round(cafeMolidoCremaSinEnvolsar, 2).ToString(),
                 Mensaje = cafeSinEnvasar > 10000 ? "Embolsar en menos cantidad" : "Seguir embolsando igual"
             };
 

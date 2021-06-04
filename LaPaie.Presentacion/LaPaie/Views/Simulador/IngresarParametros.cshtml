@@ -8,33 +8,72 @@
     </div>
     @using (Html.BeginForm("Index", "Simulador", new { }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
     {
-        <div class="col-12">
-            <div class="form-group">
-                <label for="formGroupExampleInput">Dias de simulación</label>
-                <input type="number" class="form-control" id="" name="nDiasSumilacion" placeholder="" value="2">
+        <div class="row mb-2">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Dias de simulación</label>
+                    <input type="number" class="form-control col-6" id="" name="nDiasSumilacion" placeholder="" value="2">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput">Costo fijo de gas</label>
-                <input type="text" class="form-control" id="" name="nCostoFijoGas" placeholder="" value="338,47">
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Costo fijo de gas</label>
+                    <input type="text" class="form-control" id="" name="nCostoFijoGas" placeholder="" value="338,47">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput">Costo de metro cúbico</label>
-                <input type="text" class="form-control" id="" name="nCostoMetro3Gas" placeholder="" value="11,42">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Costo de metro cúbico</label>
+                    <input type="text" class="form-control" id="" name="nCostoMetro3Gas" placeholder="" value="11,42">
+                </div>
             </div>
-            <div class="form-group">
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-12">
                 <label for="formGroupExampleInput">Promedio de bolsas a procesar por dia</label>
-                <input type="number" class="form-control col-6" id="" name="nMinimoBolsasProcesar" placeholder="Minimo" value="2" required>
-                <input type="number" class="form-control col-6" id="" name="nMaximoBolsasProcesar" placeholder="Maximo" value="4" required>
-            </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput">Promedio de tiempo de horneado</label>
-                <input type="number" class="form-control col-6" id="" name="nMinimoTiempoHorneado" placeholder="Minimo" value="20" required>
-                <input type="number" class="form-control col-6" id="" name="nMaximoTiempoHorneado" placeholder="Maximo" value="25" required>
             </div>
 
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Mínimo</label>
+                    <input type="number" class="form-control col-6" id="" name="nMinimoBolsasProcesar" placeholder="Minimo" value="2" required>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Máximo</label>
+                    <input type="number" class="form-control col-6" id="" name="nMaximoBolsasProcesar" placeholder="Maximo" value="4" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-12">
+                <label for="formGroupExampleInput">Promedio de tiempo de horneado</label>
+            </div>
+
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Mínimo</label>
+                    <input type="number" class="form-control col-6" id="" name="nMinimoTiempoHorneado" placeholder="Minimo" value="20" required>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Máximo</label>
+                    <input type="number" class="form-control col-6" id="" name="nMaximoTiempoHorneado" placeholder="Maximo" value="25" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
             <div class="form-group">
                 <button class="btn btn-primary" type="submit">SIMULAR</button>
             </div>
         </div>
     }
-    </div>
+</div>
