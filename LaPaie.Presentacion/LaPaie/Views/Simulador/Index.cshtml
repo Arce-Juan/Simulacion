@@ -1,0 +1,73 @@
+﻿@using LaPaie.Models
+@model SimuladorViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PrincipalSitie.cshtml";
+}
+<div class="row">
+    <div class="col-12">
+        <h3>Simulador - Poisson: @Model.ValorPoisson</h3>
+    </div>
+</div>
+
+<div id="divMisModales">
+    <div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog" tabindex="-1" id="modal-error">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h4 class="modal-title">ERROR</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Se ha producido un error. Detalles: </p>
+                    <p id="idPError"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var k_total = 10; // number of times the event is repeated
+    var landa = 8;  // Promedian number of error expected in a given time (Landa symbol)
+    var exponential = 2.718281828;
+    var total = 0;
+    var numerator, denominator;
+
+    // Sumatorio de k terminos usando la formula de poisson
+
+    function fact(x) {
+        if (x == 0) {
+            return 1;
+        }
+        return x * fact(x - 1);
+    }
+
+    function poisson(k, landa) {
+        exponentialPower = Math.pow(exponential, -landa); // negative power k
+        landaPowerK = Math.pow(landa, k); // Landa elevated k
+        numerator = exponentialPower * landaPowerK;
+        denominator = fact(k); // factorial of k.
+
+        return (numerator / denominator);
+    }
+
+    for (var i = 0; i < k_total; i++) {
+        total += poisson(i, landa);
+    }
+
+    console.log("Total sum is " + total);
+
+    
+
+    var LanzarModalError = function (mensaje) {
+        $("#idPError").html("<b>" + mensaje + "</b>");
+        $("#modal-error").modal("show");
+        return false;
+    };
+</script>
