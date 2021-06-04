@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PrincipalSitie.cshtml";
+}
+<div class="row">
+    <div class="col-12">
+        <h3>Simulador - Ingresa los parámetros</h3>
+    </div>
+    @using (Html.BeginForm("Index", "Simulador", new { }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        <div class="col-12">
+            <div class="form-group">
+                <label for="formGroupExampleInput">Dias de simulación</label>
+                <input type="number" class="form-control" id="" name="nDiasSumilacion" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Costo fijo de gas</label>
+                <input type="number" class="form-control" id="" name="nCostoFijoGas" placeholder="" value="338.47">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Costo de metro cúbico</label>
+                <input type="number" class="form-control" id="" name="nCostoMetro3Gas" placeholder="" value="11.42">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Promedio de bolsas a procesar por dia</label>
+                <input type="number" class="form-control col-6" id="" name="nMinimoBolsasProcesar" placeholder="Minimo" required>
+                <input type="number" class="form-control col-6" id="" name="nMaximoBolsasProcesar" placeholder="Maximo" required>
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Promedio de tiempo de horneado</label>
+                <input type="number" class="form-control col-6" id="" name="nMinimoTiempoHorneado" placeholder="Minimo" required>
+                <input type="number" class="form-control col-6" id="" name="nMaximoTiempoHorneado" placeholder="Maximo" required>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">SIMULAR</button>
+            </div>
+        </div>
+    }
+    </div>

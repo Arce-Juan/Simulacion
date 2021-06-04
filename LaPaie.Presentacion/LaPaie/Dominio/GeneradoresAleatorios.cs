@@ -21,6 +21,36 @@ namespace LaPaie.Dominio
             }
             return numeroAleatorio;
         }
+
+        public List<double> MetodoCongruencialMixto(int constMultiplicativa, int semilla, int constAditiva, int modulo, int totalAGenerar, int digitoPrecision)
+        {
+            var listaNumerosAleatorios = new List<double>();
+            var trucador = Math.Pow(10, digitoPrecision);
+            //var trucador = Math.Round(10, digitoPrecision);
+            //Math.Round(_Numero, _cantidadDigitosDespuesdeLaComa);
+
+            for (int i = 1; i <= totalAGenerar; i++)
+            {
+                semilla = (constMultiplicativa * semilla + constAditiva) % modulo; // modulo o resto
+                double numeroAletario = (double)semilla / (double)modulo;
+                numeroAletario = Math.Round(numeroAletario, digitoPrecision);
+                listaNumerosAleatorios.Add(numeroAletario);
+            }
+
+            return listaNumerosAleatorios;
+        }
+
+        public double MetodoCongruencialMixto(int constMultiplicativa, int constAditiva, int modulo, int digitoPrecision)
+        {
+            Random rand = new Random();
+            var semilla = rand.Next(1, 10000);
+
+            semilla = (constMultiplicativa * semilla + constAditiva) % modulo; // modulo o resto
+            double numeroAletario = (double)semilla / (double)modulo;
+            numeroAletario = Math.Round(numeroAletario, digitoPrecision);
+
+            return numeroAletario;
+        }
         /*
         public long Binomial(long n, double p)
         {

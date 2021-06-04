@@ -6,7 +6,50 @@
 }
 <div class="row">
     <div class="col-12">
-        <h3>Simulador - Poisson: @Model.ValorPoisson</h3>
+        <h3>Resultado de Simulador</h3>
+    </div>
+
+    <div class="col-12">
+        <div class="form-group">
+            <label for="formGroupExampleInput">Total Cafe Tostado</label>
+            <input type="text" class="form-control" id="" placeholder="" value="@Model.TotalCafeTostado">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput">BolsaCafeMolido Crema</label>
+            <input type="text" class="form-control" id="" placeholder="" value="@Model.BolsaCafeMolidoCrema">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput">BolsaCafeMolidoTorrado</label>
+            <input type="text" class="form-control" id="" placeholder="" value="@Model.BolsaCafeMolidoTorrado">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput">BolsaCafeGranosCrema</label>
+            <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.BolsaCafeGranosCrema">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput">BolsaCafeGranosTorrado</label>
+            <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.BolsaCafeGranosTorrado">
+        </div>
+
+        <div class="form-group">
+            <label for="formGroupExampleInput">CostoTotalGas</label>
+            <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.CostoTotalGas">
+        </div>
+
+        <div class="form-group">
+            <label for="formGroupExampleInput">CafeSinEnvasar</label>
+            <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.CafeSinEnvasar">
+        </div>
+
+        <div class="form-group">
+            <label for="formGroupExampleInput">Mensaje</label>
+            <input type="text" class="form-control col-6" id="formGroupExampleInput" placeholder="Maximo" value="@Model.Mensaje">
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary" type="button">Volver</button>
+        </div>
+
     </div>
 </div>
 
