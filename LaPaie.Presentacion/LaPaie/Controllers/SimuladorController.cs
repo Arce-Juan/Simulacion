@@ -24,8 +24,6 @@ namespace LaPaie.Controllers
         [HttpPost]
         public ActionResult Index(FormCollection collection)
         {
-            var aux = collection["nCostoFijoGas"];
-
             var diasSumilacion = int.Parse(collection["nDiasSumilacion"]);
             var costoFijoGas = double.Parse(collection["nCostoFijoGas"]);
             var costoMetro3Gas = double.Parse(collection["nCostoMetro3Gas"]);
@@ -48,7 +46,7 @@ namespace LaPaie.Controllers
             double cafeMolidoCremaSinEnvolsar = 0;
             double cafeMolidoTorradoSinEnvolsar = 0;
 
-            for (int dia = 1; dia < diasSumilacion; dia++)  // bucle de dias
+            for (int dia = 1; dia <= diasSumilacion; dia++)  // bucle de dias
             {
                 var bolsasAProcesarPorDia = DistribucionesProbabilidad.Uniforme(minimoBolsasProcesar, maximoBolsasProcesar);
                 totalMinutosEncendidoHorno += DistribucionesProbabilidad.Exponencial(5);
@@ -87,14 +85,14 @@ namespace LaPaie.Controllers
                         bolsasCafeMolidoCrema += 1;
                         cafeMolidoCrema -= 1000;
                     }
-                    cafeMolidoCremaSinEnvolsar += cafeGranosCrema;
+                    cafeMolidoCremaSinEnvolsar += cafeMolidoCrema;
 
                     while (cafeMolidoTorrado >= 1000)
                     {
                         bolsasCafeMolidoTorrado += 1;
                         cafeMolidoTorrado -= 1000;
                     }
-                    cafeMolidoTorradoSinEnvolsar += cafeGranosTorrado;
+                    cafeMolidoTorradoSinEnvolsar += cafeMolidoTorrado;
 
                 } // fin Bucle de Bolsas
 
@@ -112,6 +110,10 @@ namespace LaPaie.Controllers
                 BolsaCafeGranosTorrado = bolsasCafeGranosTorrado.ToString(),
                 CostoTotalGas = costoTotalGas.ToString(),
                 CafeSinEnvasar = cafeSinEnvasar.ToString(),
+                CafeGranosTorradoSinEnvolsar = cafeGranosTorradoSinEnvolsar.ToString(),
+                CafeGranosCremaSinEnvolsar = cafeGranosCremaSinEnvolsar.ToString(),
+                CafeMolidoTorradoSinEnvolsar = cafeMolidoTorradoSinEnvolsar.ToString(),
+                CafeMolidoCremaSinEnvolsar = cafeMolidoCremaSinEnvolsar.ToString(),
                 Mensaje = cafeSinEnvasar > 10000 ? "Embolsar en menos cantidad" : "Seguir embolsando igual"
             };
 

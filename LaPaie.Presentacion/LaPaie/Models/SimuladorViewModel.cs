@@ -15,5 +15,9 @@ namespace LaPaie.Models
         public string CostoTotalGas { get; set; }
         public string CafeSinEnvasar { get; set; }
         public string Mensaje { get; set; }
+        public string CafeGranosTorradoSinEnvolsar { get; set; }
+        public string CafeGranosCremaSinEnvolsar { get; set; }
+        public string CafeMolidoTorradoSinEnvolsar { get; set; }
+        public string CafeMolidoCremaSinEnvolsar { get; set; }
     }
 }
