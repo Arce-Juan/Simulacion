@@ -180,6 +180,7 @@
     <Content Include="Resource\images\juanedu.jpg" />
     <Content Include="Resource\images\juanjo.jpg" />
     <Content Include="Resource\images\mario.png" />
+    <Content Include="Resource\images\martin.jpg" />
     <Content Include="Resource\images\tenor.gif" />
     <Content Include="Resource\images\teri.jpg" />
     <Content Include="Resource\js\demo\chart-area-demo.js" />
