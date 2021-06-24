@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LaPaie.Servicios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,12 +12,15 @@ namespace LaPaie
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            var usuarioServicio = new UsuarioServicio();
+            usuarioServicio.CargarUsuariosAutomaticamente();
+
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Simulador", action = "IngresarParametros", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Login", id = UrlParameter.Optional }
             );
         }
     }

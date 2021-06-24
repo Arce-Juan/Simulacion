@@ -1,0 +1,78 @@
+﻿@using LaPaie.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Login2";
+    Layout = "~/Views/Shared/_LoginSitie.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2 text">
+        <h1>Logueate para usar el Simulador</h1>
+        <h1><strong>Cafe LaPaie</strong></h1>
+        <div class="description">
+            <p>
+                Simulador virtuales para Cafeteria LaPaie.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-7 col-sm-offset-3 form-box">
+
+        <div class="form-bottom">
+            @using (Html.BeginForm("Login", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <h4>Utilice una cuenta local para iniciar sesión.</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Nick, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Nick, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Nick, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", @value = "" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn">Ingresar!</button>
+                </div>
+
+                <div class="form-group bg-danger text-white">
+                    <span class="field-validation-error text-danger" data-valmsg-for="" data-valmsg-replace="true">@Model.ErrorLogin</span>
+                </div>
+
+                <div class="form-group">
+                    <a class="btn btn-link" href="#">Olvidaste tu contraseña?</a>
+                </div>
+                <div class="form-group">
+                    <a href="#" class="btn btn-success">Registrate ahora!</a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3 social-login">
+        <h3>...o inicia sesión con:</h3>
+        <div class="social-login-buttons">
+            <a class="btn btn-link-2" href="#">
+                <i class="fa fa-facebook"></i> Facebook
+            </a>
+            <a class="btn btn-link-2" href="#">
+                <i class="fa fa-twitter"></i> Twitter
+            </a>
+            <a class="btn btn-link-2" href="#">
+                <i class="fa fa-google-plus"></i> Google Plus
+            </a>
+        </div>
+    </div>
+</div>
+

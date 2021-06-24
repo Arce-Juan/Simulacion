@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using LaPaie.Servicios
+@{
+    var _servicio = new UsuarioServicio();
+    var usuario = _servicio.ObtenerUsuarioLogueado();
+}
+
+<!DOCTYPE html>
 
 <html>
 <head runat="server">
@@ -42,7 +48,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/Universidad/Index">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/Simulador/IngresarParametros">
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-mug-hot"></i>
                 </div>
@@ -73,38 +79,13 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <i class="fas fa-user-graduate"></i>
-                    <span>Alumno</span>
+                    <span>Información</span>
                 </a>
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/Defecto/Inspeccionar"><i class="fas fa-address-card mr-2"></i>Incribirse a Cursado</a>
-                        <a class="collapse-item" href="/Defecto/Hermanado"><i class="fas fa-address-book mr-2"></i>Estado Academico</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <span>Profesores</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/Profesor/Index/"><i class="fas fa-clipboard-check mr-2"></i>Ver Profesores</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                    <i class="fas fa-atlas "></i>
-                    <span>Materias</span>
-                </a>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/Informes/Primera/"><i class="fas fa-clipboard-check mr-2"></i>Ver Materias</a>
+                        <a class="collapse-item" href="/Home/Alumnos"><i class="fas fa-address-card mr-2"></i>Integrantes</a>
+                        <a class="collapse-item" href="/Home/Materia"><i class="fas fa-address-book mr-2"></i>Materia</a>
+                        <a class="collapse-item" href="/Home/About"><i class="fas fa-address-book mr-2"></i>Acerca de</a>
                     </div>
                 </div>
             </li>
@@ -134,32 +115,12 @@
 
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw"></i>
-                                <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">0</span>
-                            </a>
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header">
-                                    Alertas
-                                </h6>
-                            </div>
+                            
                         </li>
 
                         <!-- Nav Item - Messages -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-envelope fa-fw"></i>
-                                <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter">0</span>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                                <h6 class="dropdown-header">
-                                    Mensajes
-                                </h6>
-                            </div>
+                           
                         </li>
 
                         <div class="topbar-divider d-none d-sm-block"></div>
@@ -168,9 +129,9 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-light-900 small"><b>usuario.Nombre</b></span>
+                                <span class="mr-2 d-none d-lg-inline text-light-900 small"><b>@usuario.Nombre</b></span>
                                 <img class="img-profile rounded-circle"
-                                     src="~/Resource/imagenes/Usuarios/default.png">
+                                     src="@usuario.Imagen">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
